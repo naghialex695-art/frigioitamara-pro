@@ -1347,9 +1347,7 @@
 
             <div class="contact__form fade-in">
                 <p class="contact__form-title">Trimiteți-ne un mesaj</p>
-                <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
-                    <input type="hidden" name="form-name" value="contact">
-                    <p hidden><input name="bot-field"></p>
+                <form id="contactForm" onsubmit="handleSubmit(event)">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Nume și prenume *</label>
@@ -1525,25 +1523,37 @@
         });
     });
 
-    // Contact form – Netlify Forms
+    // Contact form – FormSubmit.co
     async function handleSubmit(e) {
         e.preventDefault();
         const btn  = document.getElementById('submitBtn');
         const form = e.target;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Se trimite...';
         btn.disabled  = true;
+        const fd = new FormData(form);
+        const payload = {
+            _subject: 'Mesaj nou de pe site – Frigioi Tamara PFA',
+            _captcha: 'false',
+            _template: 'table',
+            name:    fd.get('name'),
+            email:   fd.get('email'),
+            telefon: fd.get('phone'),
+            serviciu: fd.get('service'),
+            mesaj:   fd.get('message')
+        };
         try {
-            const res = await fetch('/', {
+            const res  = await fetch('https://formsubmit.co/ajax/contabilitate.tf@gmail.com', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(new FormData(form)).toString()
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(payload)
             });
-            if (res.ok) {
+            const data = await res.json();
+            if (data.success === 'true' || data.success === true) {
                 btn.innerHTML        = '<i class="fas fa-check"></i> Mesaj trimis cu succes!';
                 btn.style.background = '#27AE60';
                 form.reset();
             } else {
-                throw new Error('server error');
+                throw new Error(data.message);
             }
         } catch (_) {
             btn.innerHTML        = '<i class="fas fa-exclamation-triangle"></i> Eroare. Încercați din nou.';
