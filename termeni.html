@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termeni și Condiții – Frigioi Tamara PFA</title>
+    <meta name="description" content="Termenii și condițiile de utilizare a site-ului și serviciilor Frigioi Tamara PFA – servicii de contabilitate Timișoara.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2D50'/><text y='46' x='8' font-size='40' font-family='serif' fill='%23C9A84C'>ft</text></svg>">
+    <style>
+        :root {
+            --navy: #1B2D50;
+            --navy-dark: #0F1E38;
+            --gold: #C9A84C;
+            --white: #FFFFFF;
+            --text: #2C2C2C;
+            --text-light: #6B6B6B;
+            --bg: #F8F6F1;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Source Sans 3', sans-serif; color: var(--text); background: var(--bg); line-height: 1.75; }
+
+        /* HEADER */
+        .page-header {
+            background: var(--navy-dark);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+        .page-header__inner {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .page-header__brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+        .page-header__brand span { color: var(--gold); }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.65);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .back-btn:hover { color: var(--gold); }
+
+        /* HERO BANNER */
+        .tc-hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            padding: 52px 24px 38px;
+            text-align: center;
+        }
+        .tc-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.7rem, 4vw, 2.5rem);
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        .tc-hero h1 span { color: var(--gold); }
+        .tc-hero p { font-size: 0.9rem; color: rgba(255,255,255,0.5); }
+        .tc-hero__divider {
+            width: 48px;
+            height: 3px;
+            background: var(--gold);
+            margin: 14px auto 0;
+            border-radius: 2px;
+        }
+
+        /* MAIN CONTENT */
+        .tc-content {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 44px 24px 72px;
+        }
+        .tc-intro {
+            background: var(--white);
+            border-left: 4px solid var(--gold);
+            padding: 18px 22px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 40px;
+            font-size: 0.96rem;
+            color: var(--text-light);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .tc-intro strong { color: var(--navy); }
+        .tc-section { margin-bottom: 38px; }
+        .tc-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+        }
+        .tc-section p { margin-bottom: 10px; font-size: 0.97rem; }
+        .tc-section ul, .tc-section ol { margin: 8px 0 10px 22px; font-size: 0.97rem; }
+        .tc-section li { margin-bottom: 6px; }
+        .tc-section strong { color: var(--navy); }
+        .tc-section a { color: var(--gold); font-weight: 600; text-decoration: none; }
+        .tc-section a:hover { text-decoration: underline; }
+
+        /* FOOTER */
+        .page-footer {
+            background: #070E1C;
+            padding: 24px 24px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .page-footer__anpc { margin-bottom: 14px; }
+        .page-footer__anpc img { height: 40px; opacity: 0.82; transition: opacity 0.3s; }
+        .page-footer__anpc a:hover img { opacity: 1; }
+        .page-footer p { font-size: 13px; color: rgba(255,255,255,0.35); }
+        .page-footer a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.3s; }
+        .page-footer a:hover { color: var(--gold); }
+
+        @media (max-width: 600px) {
+            .page-header__brand { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+    <div class="page-header__inner">
+        <a href="index.html" class="page-header__brand">Frigioi Tamara <span>PFA</span></a>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Înapoi la site</a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="tc-hero">
+    <h1>Termeni și <span>Condiții</span></h1>
+    <p>Ultima actualizare: mai 2026</p>
+    <div class="tc-hero__divider"></div>
+</section>
+
+<!-- CONTENT -->
+<main class="tc-content">
+
+    <div class="tc-intro">
+        Vă rugăm să citiți cu atenție acești termeni și condiții înainte de a utiliza serviciile noastre. Prin accesarea site-ului sau prin solicitarea serviciilor <strong>Frigioi Tamara PFA</strong>, confirmați că ați citit, înțeles și acceptat prezentele condiții.
+    </div>
+
+    <div class="tc-section">
+        <h2>1. Definiții</h2>
+        <ul>
+            <li><strong>„Prestator"</strong> – Frigioi Tamara PFA, cu sediul în Str. Constantin Brâncuși nr. 7, Mun. Timișoara, Jud. Timiș.</li>
+            <li><strong>„Client"</strong> – orice persoană fizică sau juridică care solicită sau utilizează serviciile Prestatorului.</li>
+            <li><strong>„Site"</strong> – prezentul website și toate paginile sale.</li>
+            <li><strong>„Servicii"</strong> – prestațiile de contabilitate, salarizare, fiscalitate și consultanță descrise pe site.</li>
+            <li><strong>„Contract"</strong> – acordul scris încheiat între Prestator și Client, care guvernează prestarea serviciilor.</li>
+        </ul>
+    </div>
+
+    <div class="tc-section">
+        <h2>2. Obiectul și acceptarea termenilor</h2>
+        <p>Prezentul document stabilește regulile de utilizare a site-ului și condițiile generale care stau la baza prestării serviciilor de contabilitate și servicii conexe oferite de Frigioi Tamara PFA.</p>
+        <p>Utilizarea site-ului sau solicitarea oricărui serviciu implică acceptul necondiționat al prezentelor termeni și condiții. Dacă nu sunteți de acord cu oricare dintre prevederi, vă rugăm să nu utilizați site-ul sau serviciile noastre.</p>
+    </div>
+
+    <div class="tc-section">
+        <h2>3. Serviciile oferite</h2>
+        <p>Frigioi Tamara PFA oferă, fără a se limita la:</p>
+        <ul>
+            <li>Contabilitate primară și evidență contabilă completă</li>
+            <li>Salarizare și administrarea personalului (contracte de muncă, state de plată, declarații)</li>
+            <li>Întocmirea și depunerea declarațiilor fiscale periodice și anuale</li>
+            <li>Evidență și rambursare TVA, inclusiv operațiuni intracomunitare</li>
+            <li>Bilanț contabil anual și situații financiare</li>
+            <li>Servicii ONRC: înregistrare, modificare și radiere firme, PFA-uri și alte entități</li>
+        </ul>
+        <p>Detaliile concrete ale serviciilor, termenele și tarifele aplicabile se stabilesc prin contract individual.</p>
+    </div>
+
+    <div class="tc-section">
+        <h2>4. Obligațiile Prestatorului</h2>
+        <p>Frigioi Tamara PFA se angajează să:</p>
+        <ul>
+            <li>presteze serviciile contractate cu profesionalism, corectitudine și confidențialitate;</li>
+            <li>respecte termenele legale de depunere a documentelor fiscale și contabile;</li>
+            <li>informeze Clientul cu privire la orice modificare legislativă relevantă pentru activitatea sa;</li>
+            <li>păstreze confidențialitatea tuturor informațiilor și documentelor transmise de Client;</li>
+            <li>utilizeze informațiile primite exclusiv în scopul executării serviciilor contractate.</li>
+        </ul>
+    </div>
+
+    <div class="tc-section">
+        <h2>5. Obligațiile Clientului</h2>
+        <p>Clientul se obligă să:</p>
+        <ul>
+            <li>transmită toate documentele și informațiile necesare în timp util și în forma solicitată;</li>
+            <li>notifice Prestatorul de orice modificare a datelor de identificare, a obiectului de activitate sau a structurii de personal;</li>
+            <li>achite tarifele convenite la termenele stabilite prin contract;</li>
+            <li>nu transmită documente false, incomplete sau care ar putea induce în eroare autoritățile fiscale;</li>
+            <li>semneze și depună la timp documentele care necesită semnătura sa personală.</li>
+        </ul>
+        <p>Prestatorul nu răspunde pentru consecințele generate de documente transmise cu întârziere sau de informații incorecte furnizate de Client.</p>
+    </div>
+
+    <div class="tc-section">
+        <h2>6. Tarife și modalități de plată</h2>
+        <p>Tarifele pentru serviciile prestate sunt stabilite de comun acord și consemnate în contractul individual. Facturarea se efectuează lunar sau conform graficului agreat.</p>
+        <p>Plata se poate efectua prin:</p>
+        <ul>
+            <li>Transfer bancar în contul indicat pe factură</li>
+            <li>Numerar, la sediul biroului (cu eliberarea chitanței fiscale)</li>
+        </ul>
+        <p>Neplata la termen a serviciilor acordă Prestatorului dreptul de a suspenda prestarea serviciilor și de a solicita penalități de întârziere conform clauzelor contractuale.</p>
+    </div>
+
+    <div class="tc-section">
+        <h2>7. Răspundere și limitare a răspunderii</h2>
+        <p>Prestatorul răspunde pentru corectitudinea înregistrărilor contabile realizate pe baza documentelor puse la dispoziție de Client. Răspunderea Prestatorului este limitată la valoarea serviciilor contractate pentru perioada în care s-a produs eroarea.</p>
+        <p>Prestatorul nu este responsabil pentru:</p>
+        <ul>
+            <li>eventualele amenzi sau penalități datorate transmiterii cu întârziere a documentelor de către Client;</li>
+            <li>consecințele unor declarații incorecte cauzate de informații false sau incomplete furnizate de Client;</li>
+            <li>modificările legislative survenite după finalizarea unui serviciu specific;</li>
+            <li>decizii de afaceri luate de Client pe baza rapoartelor sau a informațiilor furnizate.</li>
+        </ul>
+    </div>
+
+    <div class="tc-section">
+        <h2>8. Confidențialitate și secretul profesional</h2>
+        <p>Toate informațiile financiare, comerciale și personale ale Clientului sunt tratate cu confidențialitate deplină, conform obligațiilor legale ale profesiei de contabil și în conformitate cu legislația în vigoare.</p>
+        <p>Frigioi Tamara PFA nu va divulga nicio informație despre Client unor terțe părți, cu excepția situațiilor prevăzute de lege (ex.: solicitări ale organelor de control fiscal).</p>
+        <p>Obligația de confidențialitate se menține și după încetarea relației contractuale.</p>
+    </div>
+
+    <div class="tc-section">
+        <h2>9. Protecția datelor cu caracter personal (GDPR)</h2>
+        <p>Frigioi Tamara PFA prelucrează datele cu caracter personal în conformitate cu <strong>Regulamentul (UE) 2016/679 (GDPR)</strong> și legislația națională aplicabilă.</p>
+        <p>Datele colectate prin formularul de contact (nume, email, telefon, mesaj) sunt utilizate exclusiv pentru a răspunde solicitărilor dvs. și nu sunt transmise unor terți în scopuri de marketing.</p>
+        <p>Aveți dreptul la acces, rectificare, ștergere, restricționarea prelucrării și portabilitatea datelor. Pentru exercitarea acestor drepturi, ne puteți contacta la <strong>contabilitate.tf@gmail.com</strong>.</p>
+        <p>Prin utilizarea site-ului și acceptarea banner-ului de cookie-uri, vă exprimați consimțământul pentru utilizarea cookie-urilor tehnice necesare funcționării corecte a site-ului.</p>
+    </div>
+
+    <div class="tc-section">
+        <h2>10. Proprietate intelectuală</h2>
+        <p>Întreg conținutul acestui site – texte, imagini, design, logo – este proprietatea Frigioi Tamara PFA și este protejat de legislația privind drepturile de autor. Reproducerea sau utilizarea oricărui element fără acordul scris al Prestatorului este interzisă.</p>
+    </div>
+
+    <div class="tc-section">
+        <h2>11. Forță majoră</h2>
+        <p>Niciuna dintre părți nu va fi responsabilă pentru neexecutarea sau executarea defectuoasă a obligațiilor contractuale cauzată de evenimente de forță majoră (calamități naturale, greve, pandemii, reglementări restrictive emise de autorități etc.), cu condiția notificării celeilalte părți în termen de 5 zile lucrătoare.</p>
+    </div>
+
+    <div class="tc-section">
+        <h2>12. Soluționarea litigiilor și ANPC</h2>
+        <p>Orice neînțelegere va fi soluționată în primul rând pe cale amiabilă. Dacă nu se ajunge la un acord, litigiul va fi supus instanțelor judecătorești competente din Timișoara, conform legislației române.</p>
+        <p>Clientul are dreptul de a depune o reclamație prin intermediul platformei ANPC – Soluționarea Alternativă a Litigiilor (SAL):</p>
+        <p><a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener">https://reclamatiisal.anpc.ro/</a></p>
+    </div>
+
+    <div class="tc-section">
+        <h2>13. Modificarea termenilor</h2>
+        <p>Frigioi Tamara PFA își rezervă dreptul de a modifica prezentele termeni și condiții oricând, fără notificare prealabilă. Versiunea actualizată va fi publicată pe această pagină cu data ultimei modificări. Continuarea utilizării serviciilor după publicarea modificărilor constituie acceptul acestora.</p>
+    </div>
+
+    <div class="tc-section">
+        <h2>14. Lege aplicabilă</h2>
+        <p>Prezentele termeni și condiții sunt guvernate de legislația română în vigoare, inclusiv dar fără a se limita la: Legea nr. 82/1991 (Legea contabilității), Codul fiscal, Legea nr. 31/1990 (Legea societăților) și legislația GDPR aplicabilă.</p>
+    </div>
+
+    <div class="tc-section">
+        <h2>Contact</h2>
+        <p>Pentru orice întrebări legate de acești termeni:</p>
+        <ul>
+            <li><strong>Email:</strong> contabilitate.tf@gmail.com</li>
+            <li><strong>Telefon:</strong> +40 771 213 166</li>
+            <li><strong>Adresă:</strong> Str. Constantin Brâncuși nr. 7, Mun. Timișoara, Jud. Timiș</li>
+            <li><strong>Program:</strong> Luni–Vineri, 09:00–18:00</li>
+        </ul>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+    <div class="page-footer__anpc">
+        <a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener" aria-label="ANPC – Soluționarea Alternativă a Litigiilor">
+            <img src="anpc-sal.svg" alt="ANPC SAL">
+        </a>
+    </div>
+    <p>© 2026 Frigioi Tamara PFA. Toate drepturile rezervate. | <a href="index.html">Înapoi la site</a></p>
+</footer>
+
+</body>
+</html>

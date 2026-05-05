@@ -4,7 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frigioi Tamara PFA – Servicii de Contabilitate Timișoara</title>
-    <meta name="description" content="Servicii profesionale de contabilitate în Timișoara și pe tot cuprinsul României. Contabilitate primară, salarizare, declarații fiscale, bilanț contabil.">
+    <meta name="description" content="Servicii profesionale de contabilitate în Timișoara: contabilitate primară, salarizare, declarații fiscale, evidență TVA, ONRC. Frigioi Tamara PFA – corect, la termen, cu dedicare.">
+    <meta name="keywords" content="contabilitate Timisoara, contabil PFA, salarizare, declaratii fiscale, TVA rambursare, ONRC infiintare firma, evidenta contabila, bilanț contabil">
+    <meta property="og:title" content="Frigioi Tamara PFA – Servicii de Contabilitate Timișoara">
+    <meta property="og:description" content="Servicii profesionale de contabilitate pentru firme și PFA-uri din toată România. Contabilitate primară, salarizare, declarații fiscale, TVA, ONRC.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ro_RO">
+
+    <!-- Structured Data – Local Business SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "Frigioi Tamara PFA",
+      "description": "Servicii profesionale de contabilitate pentru firme și PFA-uri din toată România",
+      "telephone": "+40771213166",
+      "email": "contabilitate.tf@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Str. Constantin Brâncuși nr. 7",
+        "addressLocality": "Timișoara",
+        "addressRegion": "Timiș",
+        "postalCode": "300010",
+        "addressCountry": "RO"
+      },
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "priceRange": "$$",
+      "areaServed": "Romania",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicii Contabilitate",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Contabilitate Primară"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Salarizare și Administrarea Personalului"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Declarații Fiscale"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Evidență Contabilă Completă și Bilanț"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Evidență și Rambursare TVA"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Servicii ONRC"}}
+        ]
+      }
+    }
+    </script>
 
     <!-- Favicon SVG -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2D50'/><text y='46' x='8' font-size='40' font-family='serif' fill='%23C9A84C'>ft</text></svg>">
@@ -151,7 +191,9 @@
         /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(140deg, var(--navy-dark) 0%, var(--navy) 55%, #243E6B 100%);
+            background:
+                linear-gradient(140deg, rgba(15,29,53,0.97) 0%, rgba(27,45,80,0.93) 55%, rgba(36,62,107,0.92) 100%),
+                url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
             position: relative;
@@ -188,7 +230,11 @@
         .hero__stat-label { font-size: 13px; color: rgba(255,255,255,0.55); }
 
         /* ===== SERVICES ===== */
-        .services { padding: 110px 0; background: var(--off-white); }
+        .services {
+            padding: 110px 0;
+            background: var(--off-white);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%231B2D50' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
         .services__header { text-align: center; margin-bottom: 64px; }
 
         .services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -200,22 +246,148 @@
             position: relative;
             overflow: hidden;
             transition: transform 0.35s, box-shadow 0.35s;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--gold); transition: width 0.4s; }
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(27,45,80,0.1); }
         .service-card:hover::after { width: 100%; }
 
-        .service-card__icon { width: 52px; height: 52px; background: rgba(27,45,80,0.06); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: background 0.3s; }
+        .service-card__icon { width: 52px; height: 52px; background: rgba(27,45,80,0.06); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: background 0.3s; flex-shrink: 0; }
         .service-card:hover .service-card__icon { background: rgba(201,168,76,0.12); }
         .service-card__icon i { font-size: 1.35rem; color: var(--navy); transition: color 0.3s; }
         .service-card:hover .service-card__icon i { color: var(--gold); }
 
         .service-card__title { font-family: 'Playfair Display', serif; font-size: 1.12rem; font-weight: 600; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
-        .service-card__text { font-size: 14.5px; color: var(--text-light); line-height: 1.78; }
+        .service-card__text { font-size: 14.5px; color: var(--text-light); line-height: 1.78; flex: 1; }
+
+        .service-card__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin-top: 22px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            font-family: 'Source Sans 3', sans-serif;
+            letter-spacing: 0.3px;
+            transition: color 0.3s;
+            align-self: flex-start;
+        }
+        .service-card__btn i { font-size: 0.7rem; transition: transform 0.3s; }
+        .service-card__btn:hover { color: var(--gold); }
+        .service-card__btn:hover i { transform: translateX(4px); }
+
+        /* ===== SERVICE MODALS ===== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(11,20,40,0.82);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .modal-overlay.open { opacity: 1; pointer-events: auto; }
+
+        .modal {
+            background: var(--white);
+            max-width: 820px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(28px);
+            transition: transform 0.35s ease;
+            border-radius: 2px;
+        }
+        .modal-overlay.open .modal { transform: translateY(0); }
+
+        .modal__img { width: 100%; height: 220px; object-fit: cover; display: block; }
+
+        .modal__close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            background: rgba(15,29,53,0.6);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.95rem;
+            z-index: 1;
+            transition: background 0.25s;
+        }
+        .modal__close:hover { background: var(--gold); color: var(--navy-dark); }
+
+        .modal__body { padding: 32px 40px 40px; }
+
+        .modal__label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
+
+        .modal__title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.25; }
+        .modal__divider { width: 48px; height: 3px; background: var(--gold); margin: 16px 0 22px; }
+
+        .modal__text { font-size: 15px; color: var(--text-light); line-height: 1.85; margin-bottom: 14px; }
+        .modal__text strong { color: var(--navy); font-weight: 700; }
+
+        .modal__subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 26px 0 10px;
+        }
+
+        .modal__list { list-style: none; padding: 0; margin-bottom: 16px; }
+        .modal__list li {
+            font-size: 14.5px;
+            color: var(--text-light);
+            line-height: 1.72;
+            padding: 7px 0 7px 22px;
+            position: relative;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        .modal__list li:last-child { border-bottom: none; }
+        .modal__list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 8px; height: 2px; background: var(--gold); }
+
+        .modal__cta { margin-top: 28px; }
+
+        .modal__deadline {
+            background: rgba(27,45,80,0.04);
+            border-left: 3px solid var(--gold);
+            padding: 14px 18px;
+            margin: 18px 0;
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        .modal__deadline strong { color: var(--navy); }
+
+        @media (max-width: 600px) {
+            .modal__body { padding: 22px 18px 28px; }
+            .modal__img { height: 170px; }
+        }
 
         /* ===== TESTIMONIALS ===== */
-        .testimonials { padding: 110px 0; background: var(--navy); }
+        .testimonials {
+            padding: 110px 0;
+            background: var(--navy);
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M0 0h80v80H0z'/%3E%3Cpath d='M20 20h40v40H20z' fill='none' stroke='%23C9A84C' stroke-width='0.5' stroke-opacity='0.06'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
         .testimonials__header { text-align: center; margin-bottom: 64px; }
         .testimonials__header .section-title { color: var(--white); }
 
@@ -224,49 +396,46 @@
         .testimonial-card {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
-            padding: 36px 30px;
+            padding: 32px 28px;
             position: relative;
             transition: transform 0.35s, background 0.35s;
         }
-
         .testimonial-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.08); }
 
-        .testimonial-card__quote-icon {
-            font-size: 3rem;
-            color: rgba(201,168,76,0.2);
-            line-height: 1;
-            margin-bottom: 16px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .testimonial-card__stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
-
-        .testimonial-card__text { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.8; font-style: italic; margin-bottom: 28px; }
-
-        .testimonial-card__author { display: flex; align-items: center; gap: 14px; }
-
-        .testimonial-card__avatar {
-            width: 44px; height: 44px; border-radius: 50%;
-            background: var(--gold);
-            color: var(--navy-dark);
+        .testimonial-card__domain {
+            display: inline-block;
+            background: rgba(201,168,76,0.12);
+            border: 1px solid rgba(201,168,76,0.28);
+            color: var(--gold);
+            font-size: 10px;
             font-weight: 700;
-            font-size: 15px;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 2px;
+            margin-bottom: 14px;
         }
 
-        .testimonial-card__name { font-size: 15px; font-weight: 700; color: var(--white); line-height: 1.2; }
-        .testimonial-card__role { font-size: 13px; color: rgba(255,255,255,0.5); }
+        .testimonial-card__quote-icon { font-size: 3rem; color: rgba(201,168,76,0.2); line-height: 1; margin-bottom: 12px; font-family: 'Playfair Display', serif; }
+        .testimonial-card__stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 14px; letter-spacing: 2px; }
+        .testimonial-card__text { font-size: 14.5px; color: rgba(255,255,255,0.76); line-height: 1.8; font-style: italic; margin-bottom: 24px; }
+
+        .testimonial-card__author { display: flex; align-items: center; gap: 13px; }
+        .testimonial-card__avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--gold); color: var(--navy-dark); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .testimonial-card__name { font-size: 14px; font-weight: 700; color: var(--white); line-height: 1.2; }
+        .testimonial-card__role { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+        .testimonial-card__city { font-size: 11px; color: rgba(201,168,76,0.7); margin-top: 2px; }
 
         /* ===== ABOUT ===== */
         .about { padding: 110px 0; background: var(--white); }
-
-        .about__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center; }
+        .about__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: start; }
 
         .about__visual { position: relative; padding-bottom: 40px; padding-right: 40px; }
 
         .about__bg-block {
-            background: var(--navy);
+            background:
+                linear-gradient(160deg, rgba(27,45,80,0.96) 0%, rgba(15,29,53,0.98) 100%),
+                url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80') center/cover no-repeat;
             aspect-ratio: 1;
             border-radius: 2px;
             display: flex;
@@ -281,23 +450,42 @@
         .about__badge-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; display: block; }
         .about__badge-text { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
 
-        .about__content p { font-size: 16px; color: var(--text-light); line-height: 1.88; margin-bottom: 18px; }
+        .about__content p { font-size: 15.5px; color: var(--text-light); line-height: 1.88; margin-bottom: 18px; }
         .about__content p strong { color: var(--navy); font-weight: 700; }
 
-        .about__values { display: flex; flex-direction: column; gap: 18px; margin-top: 32px; }
+        .about__values { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
 
-        .about__value { display: flex; align-items: flex-start; gap: 14px; }
+        .about__value {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        .about__value:last-child { border-bottom: none; }
 
-        .about__value-icon { flex-shrink: 0; width: 36px; height: 36px; background: rgba(201,168,76,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .about__value-icon i { font-size: 13px; color: var(--gold); }
+        .about__value-icon { flex-shrink: 0; width: 40px; height: 40px; background: rgba(201,168,76,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .about__value-icon i { font-size: 14px; color: var(--gold); }
 
-        .about__value-text strong { display: block; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
-        .about__value-text span { font-size: 14px; color: var(--text-light); }
+        .about__value-body { flex: 1; }
+        .about__value-body strong { display: block; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+        .about__value-body p { font-size: 14px; color: var(--text-light); line-height: 1.72; margin: 0 0 6px; }
+        .about__value-body ul { list-style: none; padding: 0; margin: 0; }
+        .about__value-body ul li {
+            font-size: 13.5px;
+            color: var(--text-light);
+            padding: 3px 0 3px 16px;
+            position: relative;
+        }
+        .about__value-body ul li::before { content: '·'; position: absolute; left: 4px; color: var(--gold); font-size: 1.1rem; line-height: 1.2; }
 
         /* ===== FAQ ===== */
-        .faq { padding: 110px 0; background: var(--off-white); }
+        .faq {
+            padding: 110px 0;
+            background: var(--off-white);
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231B2D50' fill-opacity='0.025'%3E%3Ccircle cx='3' cy='3' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+        }
         .faq__header { text-align: center; margin-bottom: 64px; }
-
         .faq__list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px; }
 
         .faq-item { background: var(--white); border: 1px solid var(--gray-light); overflow: hidden; }
@@ -319,64 +507,40 @@
             color: var(--navy);
             transition: background 0.2s;
         }
-
         .faq-item__question:hover { background: rgba(27,45,80,0.03); }
-
         .faq-item.active .faq-item__question { color: var(--gold); }
 
-        .faq-item__icon {
-            flex-shrink: 0;
-            width: 28px; height: 28px;
-            border-radius: 50%;
-            background: rgba(27,45,80,0.07);
-            display: flex; align-items: center; justify-content: center;
-            transition: background 0.3s, transform 0.3s;
-        }
-
+        .faq-item__icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: rgba(27,45,80,0.07); display: flex; align-items: center; justify-content: center; transition: background 0.3s, transform 0.3s; }
         .faq-item__icon i { font-size: 0.75rem; color: var(--navy); transition: color 0.3s; }
-
         .faq-item.active .faq-item__icon { background: var(--gold); transform: rotate(45deg); }
         .faq-item.active .faq-item__icon i { color: var(--navy-dark); }
 
-        .faq-item__answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s;
-            padding: 0 28px;
-        }
-
-        .faq-item.active .faq-item__answer { max-height: 300px; padding: 0 28px 24px; }
-
+        .faq-item__answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; padding: 0 28px; }
+        .faq-item.active .faq-item__answer { max-height: 340px; padding: 0 28px 24px; }
         .faq-item__answer p { font-size: 15px; color: var(--text-light); line-height: 1.8; }
 
         /* ===== CONTACT ===== */
         .contact { padding: 110px 0; background: var(--navy-dark); }
-
         .contact__header { text-align: center; margin-bottom: 64px; }
         .contact__header .section-title { color: var(--white); }
-        .contact__header p { color: rgba(255,255,255,0.6); max-width: 480px; margin: 0 auto; font-size: 16px; }
+        .contact__header p { color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto; font-size: 16px; }
 
         .contact__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; margin-bottom: 56px; }
 
         .contact__info { display: flex; flex-direction: column; gap: 26px; }
-
         .contact__item { display: flex; gap: 18px; align-items: flex-start; }
-
         .contact__item-icon { flex-shrink: 0; width: 44px; height: 44px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.22); border-radius: 2px; display: flex; align-items: center; justify-content: center; }
         .contact__item-icon i { color: var(--gold); font-size: 1rem; }
-
         .contact__item-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
         .contact__item-value { color: rgba(255,255,255,0.88); font-size: 15px; line-height: 1.6; }
         .contact__item-value a { color: inherit; text-decoration: none; transition: color 0.3s; }
         .contact__item-value a:hover { color: var(--gold); }
 
-        /* Form */
         .contact__form { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 40px 36px; }
         .contact__form-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: var(--white); margin-bottom: 28px; }
 
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .form-group { margin-bottom: 18px; }
-
         .form-group label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
 
         .form-group input,
@@ -394,157 +558,59 @@
             transition: border-color 0.3s;
             appearance: none;
         }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus { border-color: var(--gold); }
-
+        .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); }
         .form-group textarea { resize: vertical; min-height: 110px; }
         .form-group select option { background: #0F1D35; color: var(--white); }
 
         .form-submit { width: 100%; justify-content: center; margin-top: 6px; font-size: 14px; }
 
-        /* Google Maps */
-        .contact__map {
-            border-radius: 2px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
+        .contact__map { border-radius: 2px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
         .contact__map iframe { display: block; width: 100%; height: 340px; filter: grayscale(20%) contrast(1.05); }
 
         /* ===== FOOTER ===== */
         .footer { background: #070E1C; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.05); }
-
         .footer__inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-
         .footer__brand { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--white); }
+        .footer__bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.07); }
         .footer__copy { font-size: 13px; color: rgba(255,255,255,0.35); }
-
-        .footer__links { display: flex; gap: 24px; }
+        .footer__anpc img { height: 42px; opacity: 0.82; transition: opacity 0.3s; display: block; }
+        .footer__anpc:hover img { opacity: 1; }
+        .footer__links { display: flex; gap: 24px; flex-wrap: wrap; }
         .footer__links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.3s; }
         .footer__links a:hover { color: var(--gold); }
 
         /* ===== WHATSAPP BUTTON ===== */
         .whatsapp-btn {
-            position: fixed;
-            bottom: 28px;
-            left: 28px;
-            width: 56px;
-            height: 56px;
-            background: var(--green-wa);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: fixed; bottom: 28px; left: 28px;
+            width: 56px; height: 56px;
+            background: var(--green-wa); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
             box-shadow: 0 6px 24px rgba(37,211,102,0.45);
-            z-index: 500;
-            text-decoration: none;
+            z-index: 500; text-decoration: none;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
         .whatsapp-btn i { color: white; font-size: 1.6rem; }
-
-        .whatsapp-btn__tooltip {
-            position: absolute;
-            left: 68px;
-            background: var(--navy-dark);
-            color: var(--white);
-            font-size: 13px;
-            font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 4px;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
-
-        .whatsapp-btn__tooltip::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 50%;
-            transform: translateY(-50%);
-            border-width: 6px 6px 6px 0;
-            border-style: solid;
-            border-color: transparent var(--navy-dark) transparent transparent;
-        }
-
+        .whatsapp-btn__tooltip { position: absolute; left: 68px; background: var(--navy-dark); color: var(--white); font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 4px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .whatsapp-btn__tooltip::before { content: ''; position: absolute; left: -6px; top: 50%; transform: translateY(-50%); border-width: 6px 6px 6px 0; border-style: solid; border-color: transparent var(--navy-dark) transparent transparent; }
         .whatsapp-btn:hover .whatsapp-btn__tooltip { opacity: 1; }
 
         /* ===== SCROLL TOP ===== */
-        .scroll-top {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            width: 44px;
-            height: 44px;
-            background: var(--gold);
-            color: var(--navy-dark);
-            border: none;
-            border-radius: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s;
-            z-index: 500;
-            font-size: 0.95rem;
-        }
-
+        .scroll-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--gold); color: var(--navy-dark); border: none; border-radius: 2px; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; pointer-events: none; transition: all 0.3s; z-index: 500; font-size: 0.95rem; }
         .scroll-top.visible { opacity: 1; pointer-events: auto; }
         .scroll-top:hover { background: var(--gold-light); transform: translateY(-3px); }
 
         /* ===== GDPR BANNER ===== */
-        .gdpr-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--navy-dark);
-            border-top: 2px solid var(--gold);
-            z-index: 900;
-            padding: 18px 0;
-            transform: translateY(100%);
-            transition: transform 0.5s ease;
-        }
-
+        .gdpr-banner { position: fixed; bottom: 0; left: 0; right: 0; background: var(--navy-dark); border-top: 2px solid var(--gold); z-index: 900; padding: 18px 0; transform: translateY(100%); transition: transform 0.5s ease; }
         .gdpr-banner.visible { transform: translateY(0); }
-
-        .gdpr-banner__inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
+        .gdpr-banner__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
         .gdpr-banner__text { font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.6; flex: 1; min-width: 260px; }
         .gdpr-banner__text strong { color: var(--white); }
-
         .gdpr-banner__actions { display: flex; gap: 12px; flex-shrink: 0; }
-
-        .gdpr-btn {
-            padding: 9px 20px;
-            font-size: 13px;
-            font-weight: 700;
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-            font-family: 'Source Sans 3', sans-serif;
-            transition: all 0.3s;
-        }
-
+        .gdpr-btn { padding: 9px 20px; font-size: 13px; font-weight: 700; border: none; border-radius: 2px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; transition: all 0.3s; }
         .gdpr-btn--accept { background: var(--gold); color: var(--navy-dark); }
         .gdpr-btn--accept:hover { background: var(--gold-light); }
-
         .gdpr-btn--decline { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
         .gdpr-btn--decline:hover { background: rgba(255,255,255,0.15); }
 
@@ -557,13 +623,11 @@
             .services__grid { grid-template-columns: repeat(2, 1fr); }
             .testimonials__grid { grid-template-columns: repeat(2, 1fr); }
         }
-
         @media (max-width: 900px) {
             .about__inner { grid-template-columns: 1fr; gap: 56px; }
             .about__visual { max-width: 420px; margin: 0 auto; }
             .contact__grid { grid-template-columns: 1fr; }
         }
-
         @media (max-width: 768px) {
             .navbar__links { display: none; }
             .hamburger { display: flex; }
@@ -572,13 +636,13 @@
             .form-row { grid-template-columns: 1fr; }
             .gdpr-banner__inner { flex-direction: column; }
         }
-
         @media (max-width: 480px) {
             .hero__actions { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
             .hero__stats { gap: 28px; }
             .contact__form { padding: 24px 20px; }
             .footer__inner { flex-direction: column; text-align: center; }
+            .footer__bottom { flex-direction: column; align-items: center; text-align: center; }
         }
     </style>
 </head>
@@ -609,11 +673,11 @@
 <!-- ===== MOBILE NAV ===== -->
 <div class="mobile-nav" id="mobileNav">
     <button class="mobile-nav__close" id="mobileClose">&#x2715;</button>
-    <a href="#servicii"    class="mobile-link">Servicii</a>
+    <a href="#servicii"     class="mobile-link">Servicii</a>
     <a href="#testimoniale" class="mobile-link">Recenzii</a>
-    <a href="#despre"      class="mobile-link">Despre noi</a>
-    <a href="#faq"         class="mobile-link">FAQ</a>
-    <a href="#contact"     class="mobile-link">Contact</a>
+    <a href="#despre"       class="mobile-link">Despre noi</a>
+    <a href="#faq"          class="mobile-link">FAQ</a>
+    <a href="#contact"      class="mobile-link">Contact</a>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -678,41 +742,294 @@
                 <div class="service-card__icon"><i class="fas fa-file-invoice"></i></div>
                 <h3 class="service-card__title">Contabilitate Primară</h3>
                 <p class="service-card__text">Înregistrarea și organizarea documentelor justificative — facturi, chitanțe, extrase bancare — pentru o evidență clară și corectă a tuturor operațiunilor financiare.</p>
+                <button class="service-card__btn" onclick="openModal('modal-1')">
+                    Detalii complete <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
 
             <div class="service-card fade-in">
                 <div class="service-card__icon"><i class="fas fa-users"></i></div>
                 <h3 class="service-card__title">Salarizare și Administrarea Personalului</h3>
                 <p class="service-card__text">Calculul salariilor, întocmirea statelor de plată, gestionarea contractelor de muncă și depunerea declarațiilor aferente, în conformitate cu legislația muncii.</p>
+                <button class="service-card__btn" onclick="openModal('modal-2')">
+                    Detalii complete <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
 
             <div class="service-card fade-in">
                 <div class="service-card__icon"><i class="fas fa-file-alt"></i></div>
                 <h3 class="service-card__title">Declarații Fiscale</h3>
-                <p class="service-card__text">Întocmirea și depunerea la termen a tuturor declarațiilor fiscale obligatorii (D100, D101, D112, D300 etc.), prevenind penalitățile și asigurând conformitatea cu ANAF.</p>
-            </div>
-
-            <div class="service-card fade-in">
-                <div class="service-card__icon"><i class="fas fa-balance-scale"></i></div>
-                <h3 class="service-card__title">Bilanț Contabil și Situații Financiare</h3>
-                <p class="service-card__text">Elaborarea situațiilor financiare anuale și semestriale, a bilanțului contabil și a raportărilor solicitate de autoritățile fiscale și de Registrul Comerțului.</p>
+                <p class="service-card__text">Întocmirea și depunerea la termen a tuturor declarațiilor fiscale obligatorii (D100, D112, D300, D394 etc.), prevenind penalitățile și asigurând conformitatea cu ANAF.</p>
+                <button class="service-card__btn" onclick="openModal('modal-3')">
+                    Detalii complete <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
 
             <div class="service-card fade-in">
                 <div class="service-card__icon"><i class="fas fa-calculator"></i></div>
                 <h3 class="service-card__title">Evidență Contabilă Completă</h3>
-                <p class="service-card__text">Gestionarea integrală a contabilității firmei dumneavoastră, de la înregistrarea tranzacțiilor zilnice până la raportările periodice, cu respectarea normelor legale.</p>
+                <p class="service-card__text">Gestionarea integrală a contabilității firmei, de la înregistrarea zilnică a tranzacțiilor până la bilanț contabil și situații financiare anuale — totul inclus.</p>
+                <button class="service-card__btn" onclick="openModal('modal-4')">
+                    Detalii complete <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
 
             <div class="service-card fade-in">
                 <div class="service-card__icon"><i class="fas fa-percent"></i></div>
-                <h3 class="service-card__title">Înregistrare și Evidență TVA</h3>
-                <p class="service-card__text">Înregistrarea în scopuri de TVA, calculul și întocmirea decontului de TVA (D300), gestionarea relației cu ANAF și monitorizarea plafoanelor legale.</p>
+                <h3 class="service-card__title">Evidență și Rambursare TVA</h3>
+                <p class="service-card__text">Înregistrare în scopuri de TVA, decont lunar/trimestrial (D300), rambursare TVA de la ANAF și recuperare TVA/VAT din statele membre UE.</p>
+                <button class="service-card__btn" onclick="openModal('modal-5')">
+                    Detalii complete <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-card__icon"><i class="fas fa-building"></i></div>
+                <h3 class="service-card__title">Servicii ONRC</h3>
+                <p class="service-card__text">Înființare rapidă SRL sau PFA, modificări de sediu, obiect de activitate, puncte de lucru, suspendare firmă, dizolvare și lichidare — online, fără birocrație.</p>
+                <button class="service-card__btn" onclick="openModal('modal-6')">
+                    Detalii complete <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
 
         </div>
     </div>
 </section>
+
+<!-- ===== SERVICE MODALS ===== -->
+
+<!-- Modal 1: Contabilitate Primară -->
+<div class="modal-overlay" id="modal-1" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+    <div class="modal">
+        <button class="modal__close" onclick="closeModal('modal-1')" aria-label="Închide"><i class="fas fa-times"></i></button>
+        <img class="modal__img" src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=820&q=80" alt="Contabilitate Primară" loading="lazy">
+        <div class="modal__body">
+            <span class="modal__label">Serviciu detaliat</span>
+            <h2 class="modal__title" id="modal-1-title">Contabilitate Primară</h2>
+            <div class="modal__divider"></div>
+            <p class="modal__text">
+                Contabilitatea primară este un proces vital în orice firmă, asigurând înregistrarea și gestionarea corectă a tuturor tranzacțiilor financiare. Implică diverse activități și gestionarea numeroaselor documente contabile, pentru a servi corect interesele clientului.
+            </p>
+            <p class="modal__text">
+                Joacă un rol crucial, asigurând nu doar păstrarea și protecția documentelor la cele mai înalte standarde, ci și eficientizarea întregului proces — de la organizarea și arhivarea corectă a tuturor actelor, până la utilizarea echipamentelor de birou adecvate.
+            </p>
+            <h3 class="modal__subtitle">Ce include serviciul:</h3>
+            <ul class="modal__list">
+                <li>Recepționarea, verificarea și înregistrarea documentelor justificative (facturi emise și primite, chitanțe, bonuri fiscale, extrase bancare)</li>
+                <li>Organizarea și arhivarea fizică și/sau digitală a documentelor contabile</li>
+                <li>Reconcilierea soldurilor bancare și de casă</li>
+                <li>Gestionarea registrelor obligatorii: Registrul Jurnal, Registrul Inventar, Registrul de Casă</li>
+                <li>Monitorizarea creanțelor și obligațiilor față de furnizori și clienți</li>
+                <li>Consultanță privind documentele primare necesare pentru fiecare tip de tranzacție</li>
+            </ul>
+            <div class="modal__cta">
+                <a href="#contact" class="btn btn--gold" onclick="closeModal('modal-1')">
+                    <i class="fas fa-envelope"></i> Solicită ofertă
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2: Salarizare -->
+<div class="modal-overlay" id="modal-2" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
+    <div class="modal">
+        <button class="modal__close" onclick="closeModal('modal-2')" aria-label="Închide"><i class="fas fa-times"></i></button>
+        <img class="modal__img" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=820&q=80" alt="Salarizare și HR" loading="lazy">
+        <div class="modal__body">
+            <span class="modal__label">Serviciu detaliat</span>
+            <h2 class="modal__title" id="modal-2-title">Salarizare și Administrarea Personalului</h2>
+            <div class="modal__divider"></div>
+            <p class="modal__text">
+                Salarizarea și administrarea personalului funcționează ca un mecanism integrat care asigură nu doar plata angajaților, ci și conformitatea juridică a companiei în fața autorităților (ITM, ANAF). Această componentă gestionează „viața" juridică a angajatului în companie, de la semnarea contractului până la încetarea acestuia.
+            </p>
+            <h3 class="modal__subtitle">Administrarea Personalului</h3>
+            <ul class="modal__list">
+                <li><strong>Gestiunea Contractuală:</strong> Redactarea Contractelor Individuale de Muncă (CIM) conform Codului Muncii, cu clauze specifice (perioadă de probă, atribuții, confidențialitate)</li>
+                <li><strong>Dosarul de Personal:</strong> Constituirea dosarelor complete — acte de identitate, diplome, fișă medicală (medicina muncii), fișa de post și toate actele adiționale</li>
+                <li><strong>REVISAL / REGES-Online:</strong> Transmiterea obligatorie a datelor către Inspecția Muncii, inclusiv actualizarea în noul sistem REGES-Online (obligatoriu până la 31 decembrie 2025)</li>
+            </ul>
+            <h3 class="modal__subtitle">Procesul de Salarizare (Payroll)</h3>
+            <ul class="modal__list">
+                <li>Colectarea și centralizarea datelor de pontaj (ore lucrate, ore suplimentare, muncă de noapte, sărbători legale)</li>
+                <li>Calculul brut–net: CAS 25%, CASS 10%, impozit pe venit 10% după deduceri (salariu minim 2025–2026: 4.050 lei)</li>
+                <li>Aplicarea beneficiilor: tichete de masă, abonamente medicale, deduceri personale pentru copii sau persoane în întreținere</li>
+                <li><strong>Declarația 112:</strong> Depunere lunară până pe data de 25 — recapitularea tuturor impozitelor și contribuțiilor datorate statului</li>
+            </ul>
+            <h3 class="modal__subtitle">Absențe și Evenimente Speciale</h3>
+            <ul class="modal__list">
+                <li>Concedii medicale: calcul indemnizații în funcție de codul de boală (75%, 80% sau 100% din media veniturilor pe ultimele 6 luni)</li>
+                <li>Concedii de odihnă: calcul indemnizație pe baza mediei zilnice din ultimele 3 luni</li>
+                <li>Popriri și rețineri salariale dispuse de executori judecătorești</li>
+            </ul>
+            <div class="modal__cta">
+                <a href="#contact" class="btn btn--gold" onclick="closeModal('modal-2')">
+                    <i class="fas fa-envelope"></i> Solicită ofertă
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3: Declarații Fiscale -->
+<div class="modal-overlay" id="modal-3" role="dialog" aria-modal="true" aria-labelledby="modal-3-title">
+    <div class="modal">
+        <button class="modal__close" onclick="closeModal('modal-3')" aria-label="Închide"><i class="fas fa-times"></i></button>
+        <img class="modal__img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=820&q=80" alt="Declarații Fiscale" loading="lazy">
+        <div class="modal__body">
+            <span class="modal__label">Serviciu detaliat</span>
+            <h2 class="modal__title" id="modal-3-title">Declarații Fiscale</h2>
+            <div class="modal__divider"></div>
+            <p class="modal__text">
+                Gestionăm întregul calendar fiscal al firmei dumneavoastră, asigurând depunerea corectă și la timp a tuturor declarațiilor obligatorii. Orice întârziere sau eroare poate atrage amenzi și penalități de la ANAF — noi ne ocupăm ca acest lucru să nu se întâmple.
+            </p>
+            <h3 class="modal__subtitle">Ce cuprinde serviciul:</h3>
+            <ul class="modal__list">
+                <li><strong>Identificarea obligațiilor:</strong> Determinarea declarațiilor necesare în funcție de tipul entității (SRL, PFA, PFI) și de activitate</li>
+                <li><strong>D112 – Declarație privind obligațiile de plată a contribuțiilor sociale:</strong> Depunere lunară până la data de 25</li>
+                <li><strong>D300 – Decont de TVA:</strong> Lunar sau trimestrial, în funcție de regimul de TVA</li>
+                <li><strong>D394 – Declarație informativă privind livrările/prestările și achizițiile:</strong> Lunar, pentru plătitorii de TVA</li>
+                <li><strong>D100 – Obligații de plată la bugetul de stat:</strong> Impozit pe profit, impozit pe dividende etc.</li>
+                <li><strong>D101 – Declarație privind impozitul pe profit:</strong> Anual, până la 25 martie</li>
+                <li>Semnătură electronică calificată pentru transmiterea online la ANAF</li>
+                <li>Monitorizarea termenelor și notificarea din timp a obligațiilor fiscale</li>
+            </ul>
+            <div class="modal__deadline">
+                <strong>Important:</strong> Termenul general de depunere este data de 25 a lunii următoare perioadei de raportare. Nerespectarea atrage amenzi între 500 și 1.000 lei pentru persoane juridice.
+            </div>
+            <div class="modal__cta">
+                <a href="#contact" class="btn btn--gold" onclick="closeModal('modal-3')">
+                    <i class="fas fa-envelope"></i> Solicită ofertă
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 4: Evidență Contabilă Completă + Bilanț -->
+<div class="modal-overlay" id="modal-4" role="dialog" aria-modal="true" aria-labelledby="modal-4-title">
+    <div class="modal">
+        <button class="modal__close" onclick="closeModal('modal-4')" aria-label="Închide"><i class="fas fa-times"></i></button>
+        <img class="modal__img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=820&q=80" alt="Evidență Contabilă Completă" loading="lazy">
+        <div class="modal__body">
+            <span class="modal__label">Serviciu detaliat</span>
+            <h2 class="modal__title" id="modal-4-title">Evidență Contabilă Completă și Bilanț Contabil</h2>
+            <div class="modal__divider"></div>
+            <p class="modal__text">
+                Gestionarea integrală a contabilității firmei dumneavoastră — de la înregistrarea tranzacțiilor zilnice până la raportările periodice. Serviciul include și elaborarea bilanțului contabil și a situațiilor financiare, cu respectarea tuturor normelor legale și a termenelor de depunere.
+            </p>
+            <h3 class="modal__subtitle">Evidență Contabilă Curentă:</h3>
+            <ul class="modal__list">
+                <li>Înregistrarea cronologică și sistematică a tuturor operațiunilor economice în contabilitate</li>
+                <li>Gestionarea planului de conturi și a jurnalelor contabile</li>
+                <li>Evidența stocurilor, mijloacelor fixe și amortizărilor</li>
+                <li>Rapoarte periodice: balanță de verificare lunară, situația creanțelor și datoriilor</li>
+                <li>Reconcilieri bancare și de casă, gestiunea diferențelor de curs valutar</li>
+            </ul>
+            <h3 class="modal__subtitle">Bilanț Contabil și Situații Financiare:</h3>
+            <ul class="modal__list">
+                <li>Elaborarea bilanțului contabil anual (Activ–Pasiv) conform OMFP 1802/2014</li>
+                <li>Contul de profit și pierdere (veniturile și cheltuielile exercițiului)</li>
+                <li>Situația modificărilor capitalului propriu</li>
+                <li>Note explicative la situațiile financiare</li>
+                <li>Raportări semestriale (pentru entitățile obligate)</li>
+                <li>Depunere electronică la ANAF și Registrul Comerțului</li>
+            </ul>
+            <div class="modal__deadline">
+                <strong>Termene de depunere:</strong><br>
+                Situații financiare anuale: <strong>150 de zile</strong> de la încheierea exercițiului financiar (≈ 31 mai).<br>
+                Raportări contabile semestriale: <strong>60 de zile</strong> de la încheierea semestrului I (≈ 31 august).<br>
+                Nedepunerea la termen poate atrage amenzi între <strong>2.000 și 5.000 lei</strong>.
+            </div>
+            <div class="modal__cta">
+                <a href="#contact" class="btn btn--gold" onclick="closeModal('modal-4')">
+                    <i class="fas fa-envelope"></i> Solicită ofertă
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 5: Evidență și Rambursare TVA -->
+<div class="modal-overlay" id="modal-5" role="dialog" aria-modal="true" aria-labelledby="modal-5-title">
+    <div class="modal">
+        <button class="modal__close" onclick="closeModal('modal-5')" aria-label="Închide"><i class="fas fa-times"></i></button>
+        <img class="modal__img" src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=820&q=80" alt="Evidență și Rambursare TVA" loading="lazy">
+        <div class="modal__body">
+            <span class="modal__label">Serviciu detaliat</span>
+            <h2 class="modal__title" id="modal-5-title">Evidență și Rambursare TVA</h2>
+            <div class="modal__divider"></div>
+            <p class="modal__text">
+                În România, rambursarea de TVA este reglementată prin Legea nr. 227/2015 (Codul Fiscal). Orice persoană impozabilă înregistrată în scopuri de TVA, conform art. 316, poate solicita rambursarea sumelor negative — trimestrial sau lunar.
+            </p>
+            <h3 class="modal__subtitle">Servicii TVA în România:</h3>
+            <ul class="modal__list">
+                <li>Înregistrarea în scopuri de TVA (obligatorie la depășirea plafonului sau opțional)</li>
+                <li>Întocmirea și depunerea Decontului de TVA (D300) — lunar sau trimestrial</li>
+                <li>Întocmirea Declarației informative D394 (livrări și achiziții intracomunitare)</li>
+                <li>Solicitarea rambursării TVA negativ de la ANAF</li>
+                <li>Gestionarea inspecțiilor fiscale TVA și a corespondenței cu ANAF</li>
+                <li>Monitorizarea plafonului de TVA și consilierea privind regimul aplicabil</li>
+            </ul>
+            <h3 class="modal__subtitle">Rambursare TVA/VAT din Țările UE:</h3>
+            <p class="modal__text">
+                Procesul este guvernat de <strong>Directiva a 8-a a UE</strong> și permite recuperarea taxei achitate în state membre unde firma nu este stabilită — procedură integral digitalizată.
+            </p>
+            <ul class="modal__list">
+                <li>Combustibil achiziționat în alte state UE</li>
+                <li>Cazare, chirii și taxe rutiere</li>
+                <li>Închirieri de mijloace de transport</li>
+                <li>Servicii de catering și reprezentare</li>
+                <li>Alte cheltuieli eligibile efectuate în UE</li>
+            </ul>
+            <div class="modal__cta">
+                <a href="#contact" class="btn btn--gold" onclick="closeModal('modal-5')">
+                    <i class="fas fa-envelope"></i> Solicită ofertă
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 6: Servicii ONRC -->
+<div class="modal-overlay" id="modal-6" role="dialog" aria-modal="true" aria-labelledby="modal-6-title">
+    <div class="modal">
+        <button class="modal__close" onclick="closeModal('modal-6')" aria-label="Închide"><i class="fas fa-times"></i></button>
+        <img class="modal__img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=820&q=80" alt="Servicii ONRC" loading="lazy">
+        <div class="modal__body">
+            <span class="modal__label">Serviciu detaliat</span>
+            <h2 class="modal__title" id="modal-6-title">Servicii ONRC – Online</h2>
+            <div class="modal__divider"></div>
+            <p class="modal__text">
+                Vă oferim asistență completă la Oficiul Național al Registrului Comerțului (ONRC) — înregistrare rapidă a firmelor, modificări de acte și orice proceduri necesare pe parcursul vieții societății, totul online, fără deplasări inutile.
+            </p>
+            <h3 class="modal__subtitle">Înființare Firme:</h3>
+            <ul class="modal__list">
+                <li>Înființare SRL (Societate cu Răspundere Limitată)</li>
+                <li>Înregistrare PFA (Persoană Fizică Autorizată)</li>
+                <li>Rezervare denumire firmă</li>
+                <li>Redactarea actelor constitutive</li>
+                <li>Depunere dosar complet și obținere Certificat de Înregistrare (CUI)</li>
+            </ul>
+            <h3 class="modal__subtitle">Modificări și Alte Servicii:</h3>
+            <ul class="modal__list">
+                <li>Schimbare sediu social</li>
+                <li>Modificare obiect de activitate (coduri CAEN)</li>
+                <li>Deschidere punct de lucru</li>
+                <li>Suspendare activitate firmă</li>
+                <li>Dizolvare și lichidare voluntară</li>
+            </ul>
+            <div class="modal__deadline">
+                <strong>Avantaj:</strong> Toate procedurile se realizează <strong>online</strong>, prin portalul ONRC, fără a fi necesară prezența fizică la ghișeu. Obțineți documentele în cel mai scurt timp legal posibil.
+            </div>
+            <div class="modal__cta">
+                <a href="#contact" class="btn btn--gold" onclick="closeModal('modal-6')">
+                    <i class="fas fa-envelope"></i> Solicită ofertă
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- ===== TESTIMONIALS ===== -->
 <section class="testimonials" id="testimoniale">
@@ -725,6 +1042,7 @@
         <div class="testimonials__grid">
 
             <div class="testimonial-card fade-in">
+                <div class="testimonial-card__domain">Restaurant &amp; HoReCa</div>
                 <div class="testimonial-card__quote-icon">"</div>
                 <div class="testimonial-card__stars">★★★★★</div>
                 <p class="testimonial-card__text">De când colaborez cu Tamara, nu mai am griji legate de contabilitate. Totul este depus la timp, comunicarea este excelentă și întotdeauna găsește soluțiile potrivite pentru firma mea.</p>
@@ -732,12 +1050,14 @@
                     <div class="testimonial-card__avatar">MI</div>
                     <div>
                         <div class="testimonial-card__name">Maria Ionescu</div>
-                        <div class="testimonial-card__role">Proprietar restaurant, Timișoara</div>
+                        <div class="testimonial-card__role">SRL · Restaurant</div>
+                        <div class="testimonial-card__city"><i class="fas fa-map-marker-alt" style="font-size:10px; margin-right:4px;"></i>Timișoara</div>
                     </div>
                 </div>
             </div>
 
             <div class="testimonial-card fade-in">
+                <div class="testimonial-card__domain">IT &amp; Software</div>
                 <div class="testimonial-card__quote-icon">"</div>
                 <div class="testimonial-card__stars">★★★★★</div>
                 <p class="testimonial-card__text">Ca freelancer IT, aveam nevoie de cineva de încredere pentru PFA-ul meu. Tamara se ocupă de tot — salarizare, declarații, bilanț — și mă anunță din timp de orice termen important.</p>
@@ -745,12 +1065,14 @@
                     <div class="testimonial-card__avatar">AP</div>
                     <div>
                         <div class="testimonial-card__name">Adrian Popa</div>
-                        <div class="testimonial-card__role">Freelancer IT, PFA</div>
+                        <div class="testimonial-card__role">PFA · IT &amp; Software</div>
+                        <div class="testimonial-card__city"><i class="fas fa-map-marker-alt" style="font-size:10px; margin-right:4px;"></i>București</div>
                     </div>
                 </div>
             </div>
 
             <div class="testimonial-card fade-in">
+                <div class="testimonial-card__domain">Retail &amp; Comerț</div>
                 <div class="testimonial-card__quote-icon">"</div>
                 <div class="testimonial-card__stars">★★★★★</div>
                 <p class="testimonial-card__text">Recomand cu căldură! Am apelat la serviciile doamnei Frigioi după ce am avut probleme cu un contabil anterior. Profesionalism, seriozitate și răspuns rapid la orice întrebare.</p>
@@ -758,7 +1080,53 @@
                     <div class="testimonial-card__avatar">CM</div>
                     <div>
                         <div class="testimonial-card__name">Cristina Mureșan</div>
-                        <div class="testimonial-card__role">Magazin de retail, Cluj-Napoca</div>
+                        <div class="testimonial-card__role">SRL · Retail</div>
+                        <div class="testimonial-card__city"><i class="fas fa-map-marker-alt" style="font-size:10px; margin-right:4px;"></i>Cluj-Napoca</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-card__domain">Construcții</div>
+                <div class="testimonial-card__quote-icon">"</div>
+                <div class="testimonial-card__stars">★★★★★</div>
+                <p class="testimonial-card__text">Colaborăm de aproape doi ani și sunt extrem de mulțumit. Domeniul construcțiilor are multe particularități fiscale, iar Tamara le cunoaște perfect. Ne-a scutit de amenzi semnificative.</p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">DM</div>
+                    <div>
+                        <div class="testimonial-card__name">Dan Moldovan</div>
+                        <div class="testimonial-card__role">SRL · Construcții</div>
+                        <div class="testimonial-card__city"><i class="fas fa-map-marker-alt" style="font-size:10px; margin-right:4px;"></i>Deva</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-card__domain">Service Auto</div>
+                <div class="testimonial-card__quote-icon">"</div>
+                <div class="testimonial-card__stars">★★★★★</div>
+                <p class="testimonial-card__text">Serviciu impecabil! Am trecut de la un contabil local fără experiență la doamna Frigioi și diferența este uriașă. Totul este clar, transparent și la timp. O recomand oricui are un service auto.</p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">ES</div>
+                    <div>
+                        <div class="testimonial-card__name">Elena Stoica</div>
+                        <div class="testimonial-card__role">SRL · Service Auto</div>
+                        <div class="testimonial-card__city"><i class="fas fa-map-marker-alt" style="font-size:10px; margin-right:4px;"></i>Târgu Jiu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-card__domain">Cosmetică &amp; Beauty</div>
+                <div class="testimonial-card__quote-icon">"</div>
+                <div class="testimonial-card__stars">★★★★★</div>
+                <p class="testimonial-card__text">Deși sunt plecată în UK, colaborarea cu Tamara se desfășoară perfect online. Se ocupă de tot pentru PFA-ul meu din România și nu am nicio grijă legată de declarații sau termene fiscale.</p>
+                <div class="testimonial-card__author">
+                    <div class="testimonial-card__avatar">IB</div>
+                    <div>
+                        <div class="testimonial-card__name">Ioana Bratu</div>
+                        <div class="testimonial-card__role">PFA · Cosmetică &amp; Beauty</div>
+                        <div class="testimonial-card__city"><i class="fas fa-map-marker-alt" style="font-size:10px; margin-right:4px;"></i>Londra, UK</div>
                     </div>
                 </div>
             </div>
@@ -789,29 +1157,50 @@
                 <h2 class="section-title">Contabilitate personalizată,<br>îngrijire dedicată</h2>
                 <div class="divider divider--left"></div>
                 <p>La <strong>Frigioi Tamara PFA</strong>, nu sunteți un simplu număr de dosar. Mă voi ocupa personal de toate necesitățile contabile ale firmei dumneavoastră, cu atenție la fiecare detaliu și responsabilitate maximă față de obligațiile fiscale.</p>
-                <p>Cu sediul în Timișoara, ofer servicii atât clienților locali, cât și celor din întreaga țară — adaptând mereu abordarea la specificul fiecărei afaceri. Beneficiați de comunicare directă, transparentă și de o relație construită pe încredere.</p>
+                <p>Cu sediul în Timișoara, ofer servicii atât clienților locali, cât și celor din întreaga țară și diaspora — adaptând mereu abordarea la specificul fiecărei afaceri. Beneficiați de comunicare directă, transparentă și de o relație construită pe încredere.</p>
+
                 <div class="about__values">
+
                     <div class="about__value">
-                        <div class="about__value-icon"><i class="fas fa-check"></i></div>
-                        <div class="about__value-text">
+                        <div class="about__value-icon"><i class="fas fa-award"></i></div>
+                        <div class="about__value-body">
                             <strong>Profesionalism</strong>
-                            <span>Respectarea tuturor termenelor legale și a normelor contabile în vigoare.</span>
+                            <p>Competență și cunoștințe solide în domeniu, integritate și etică profesională, responsabilitate pentru fiecare decizie și acțiune.</p>
+                            <ul>
+                                <li>Respectarea tuturor termenelor legale și normelor contabile în vigoare</li>
+                                <li>Actualizare permanentă cu modificările legislative fiscale</li>
+                                <li>Comunicare eficientă și capacitatea de a asculta feedback-ul clienților</li>
+                            </ul>
                         </div>
                     </div>
+
                     <div class="about__value">
                         <div class="about__value-icon"><i class="fas fa-shield-alt"></i></div>
-                        <div class="about__value-text">
+                        <div class="about__value-body">
                             <strong>Confidențialitate</strong>
-                            <span>Datele firmei dumneavoastră sunt tratate cu maximă discreție și siguranță.</span>
+                            <p>Prelucrarea datelor cu caracter personal se realizează în temeiul consimțământului dumneavoastră (art. 6 alin. (1) lit. a din Regulamentul General privind Protecția Datelor — GDPR). Confidențialitatea se aplică atât datelor persoanelor juridice, cât și ale persoanelor fizice implicate.</p>
+                            <ul>
+                                <li>Date de identificare (Nume, CNP, Adresă)</li>
+                                <li>Informații financiare și bancare</li>
+                                <li>Date salariale și din contractele de muncă</li>
+                                <li>Documente fiscale și comerciale</li>
+                            </ul>
                         </div>
                     </div>
+
                     <div class="about__value">
                         <div class="about__value-icon"><i class="fas fa-headset"></i></div>
-                        <div class="about__value-text">
+                        <div class="about__value-body">
                             <strong>Disponibilitate</strong>
-                            <span>Răspuns prompt și comunicare clară pe tot parcursul colaborării noastre.</span>
+                            <p>Răspuns prompt și comunicare clară pe tot parcursul colaborării. Suntem disponibili de <strong>luni până vineri, între orele 9:00 – 18:00</strong>, atât la birou cât și online — prin email, telefon sau WhatsApp.</p>
+                            <ul>
+                                <li>Notificare din timp a termenelor și obligațiilor fiscale importante</li>
+                                <li>Colaborare online pentru clienții din toată țara și din diaspora</li>
+                                <li>Consultanță disponibilă pe tot parcursul anului fiscal</li>
+                            </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -841,11 +1230,11 @@
 
             <div class="faq-item">
                 <button class="faq-item__question">
-                    Oferiți servicii și pentru clienți din afara Timișoarei?
+                    Oferiți servicii și pentru clienți din afara Timișoarei sau din diaspora?
                     <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="faq-item__answer">
-                    <p>Da, ofer servicii de contabilitate pentru clienți din toată România. Colaborarea se desfășoară online, prin email și aplicații de mesagerie, iar documentele pot fi transmise digital sau prin curierat. Distanța nu este un impediment pentru o colaborare eficientă.</p>
+                    <p>Da, ofer servicii pentru clienți din toată România și pentru cei plecați în UK sau alte state UE. Colaborarea se desfășoară online, prin email și aplicații de mesagerie, iar documentele pot fi transmise digital sau prin curierat. Distanța nu este un impediment pentru o colaborare eficientă.</p>
                 </div>
             </div>
 
@@ -900,7 +1289,7 @@
             <span class="section-label">Luați legătura</span>
             <h2 class="section-title">Contact</h2>
             <div class="divider"></div>
-            <p>Disponibili de luni până vineri, între orele 10:00 – 16:00. Nu ezitați să ne contactați!</p>
+            <p>Suntem disponibili de <strong style="color:rgba(255,255,255,0.85)">luni până vineri, 9:00 – 18:00</strong>. Contactați-ne telefonic, pe WhatsApp sau prin formularul de mai jos — răspundem prompt.</p>
         </div>
 
         <div class="contact__grid">
@@ -933,8 +1322,8 @@
                 <div class="contact__item">
                     <div class="contact__item-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div>
-                        <div class="contact__item-label">Adresă</div>
-                        <div class="contact__item-value">Str. Carei nr. 14, sc. B, ap. 15<br>Municipiul Timișoara, Județul Timiș</div>
+                        <div class="contact__item-label">Birou / Adresă</div>
+                        <div class="contact__item-value">Str. Constantin Brâncuși nr. 7<br>Municipiul Timișoara, Județul Timiș</div>
                     </div>
                 </div>
 
@@ -942,7 +1331,7 @@
                     <div class="contact__item-icon"><i class="fas fa-clock"></i></div>
                     <div>
                         <div class="contact__item-label">Program de lucru</div>
-                        <div class="contact__item-value">Luni – Vineri: 10:00 – 16:00</div>
+                        <div class="contact__item-value">Luni – Vineri: 9:00 – 18:00</div>
                     </div>
                 </div>
 
@@ -950,7 +1339,7 @@
                     <div class="contact__item-icon"><i class="fas fa-globe-europe"></i></div>
                     <div>
                         <div class="contact__item-label">Acoperire teritorială</div>
-                        <div class="contact__item-value">Servicii prestate pe tot cuprinsul României</div>
+                        <div class="contact__item-value">Servicii prestate pe tot cuprinsul României și pentru diaspora</div>
                     </div>
                 </div>
 
@@ -959,11 +1348,15 @@
             <div class="contact__form fade-in">
                 <p class="contact__form-title">Trimiteți-ne un mesaj</p>
                 <!--
-                    FORMSPREE: inlocuiti action="#" cu action="https://formspree.io/f/ID_VOS"
-                    dupa ce va inregistrati gratuit la formspree.io (50 mesaje/luna gratuit).
-                    Stergeti si atributul onsubmit dupa activare.
+                    WEB3FORMS: obțineți access key gratuit la https://web3forms.com/
+                    Introduceți adresa contabilitate.tf@gmail.com → primiți cheia pe email.
+                    Înlocuiți CHEIA_VOASTRA_AICI cu cheia primită.
                 -->
-                <form id="contactForm" action="#" method="POST" onsubmit="handleSubmit(event)">
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <input type="hidden" name="access_key" value="CHEIA_VOASTRA_AICI">
+                    <input type="hidden" name="subject" value="Mesaj nou de pe site – Frigioi Tamara PFA">
+                    <input type="hidden" name="from_name" value="Site Frigioi Tamara PFA">
+                    <input type="hidden" name="redirect" value="false">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Nume și prenume *</label>
@@ -985,9 +1378,9 @@
                             <option>Contabilitate Primară</option>
                             <option>Salarizare și Administrarea Personalului</option>
                             <option>Declarații Fiscale</option>
-                            <option>Bilanț Contabil și Situații Financiare</option>
-                            <option>Evidență Contabilă Completă</option>
-                            <option>Înregistrare și Evidență TVA</option>
+                            <option>Evidență Contabilă Completă și Bilanț</option>
+                            <option>Evidență și Rambursare TVA</option>
+                            <option>Servicii ONRC</option>
                             <option>Altele</option>
                         </select>
                     </div>
@@ -1005,14 +1398,14 @@
         <!-- Google Maps -->
         <div class="contact__map fade-in">
             <iframe
-                src="https://maps.google.com/maps?q=Strada+Carei+14+Timisoara+Romania&output=embed&z=15"
+                src="https://maps.google.com/maps?q=Strada+Constantin+Brancusi+7+Timisoara+Romania&output=embed&z=15"
                 width="100%"
                 height="340"
                 style="border:0;"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Locatie Frigioi Tamara PFA">
+                title="Locatie Frigioi Tamara PFA – Str. Constantin Brâncuși nr. 7, Timișoara">
             </iframe>
         </div>
 
@@ -1024,19 +1417,25 @@
     <div class="container">
         <div class="footer__inner">
             <div class="footer__brand">Frigioi Tamara PFA</div>
-            <div class="footer__copy">© 2023 – <span id="year"></span> Frigioi Tamara PFA. Toate drepturile rezervate.</div>
             <nav class="footer__links">
                 <a href="#acasa">Acasă</a>
                 <a href="#servicii">Servicii</a>
                 <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
+                <a href="termeni.html">Termeni și Condiții</a>
             </nav>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__copy">© 2026 Frigioi Tamara PFA. Toate drepturile rezervate.</div>
+            <a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener" class="footer__anpc" aria-label="ANPC – Soluționarea Alternativă a Litigiilor">
+                <img src="anpc-sal.svg" alt="ANPC SAL">
+            </a>
         </div>
     </div>
 </footer>
 
 <!-- ===== WHATSAPP BUTTON ===== -->
-<a href="https://wa.me/40771213166" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Contactați pe WhatsApp">
+<a href="https://wa.me/40771213166?text=Bun%C4%83%20ziua%2C%20a%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20de%20contabilitate" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Contactați pe WhatsApp">
     <i class="fab fa-whatsapp"></i>
     <span class="whatsapp-btn__tooltip">Scrieți-ne pe WhatsApp</span>
 </a>
@@ -1051,8 +1450,8 @@
     <div class="container">
         <div class="gdpr-banner__inner">
             <p class="gdpr-banner__text">
-                <strong>Acest site utilizează cookie-uri.</strong> Folosim cookie-uri pentru a vă asigura cea mai bună experiență pe site-ul nostru. Prin continuarea navigării, acceptați utilizarea acestora conform
-                <a href="#" style="color: var(--gold);">Politicii de Confidențialitate</a>.
+                <strong>Acest site utilizează cookie-uri.</strong> Folosim cookie-uri pentru a vă asigura cea mai bună experiență. Prin continuarea navigării, acceptați utilizarea acestora conform
+                <a href="termeni.html" style="color: var(--gold);">Politicii de Confidențialitate</a>.
             </p>
             <div class="gdpr-banner__actions">
                 <button class="gdpr-btn gdpr-btn--decline" id="gdprDecline">Refuz</button>
@@ -1064,32 +1463,28 @@
 
 <!-- ===== SCRIPTS ===== -->
 <script>
-    // Dynamic year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // (year is static – 2026)
 
-    // Navbar scroll effect
-    const navbar  = document.getElementById('navbar');
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
     const scrollTopBtn = document.getElementById('scrollTop');
-
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 60);
         scrollTopBtn.classList.toggle('visible', window.scrollY > 500);
     }, { passive: true });
-
     scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     // Mobile nav
     const hamburger   = document.getElementById('hamburger');
     const mobileNav   = document.getElementById('mobileNav');
     const mobileClose = document.getElementById('mobileClose');
-
     hamburger.addEventListener('click',   () => mobileNav.classList.add('open'));
     mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
     document.querySelectorAll('.mobile-link').forEach(link =>
         link.addEventListener('click', () => mobileNav.classList.remove('open'))
     );
 
-    // Intersection Observer for fade-in
+    // Fade-in observer
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1098,7 +1493,6 @@
             }
         });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
     // Animated counters
@@ -1108,7 +1502,6 @@
         const duration = 1800;
         const step     = target / (duration / 16);
         let current    = 0;
-
         const timer = setInterval(() => {
             current += step;
             if (current >= target) {
@@ -1119,7 +1512,6 @@
             }
         }, 16);
     }
-
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1128,7 +1520,6 @@
             }
         });
     }, { threshold: 0.5 });
-
     document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
     // FAQ accordion
@@ -1136,49 +1527,76 @@
         btn.addEventListener('click', () => {
             const item     = btn.closest('.faq-item');
             const isActive = item.classList.contains('active');
-
             document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-
             if (!isActive) item.classList.add('active');
         });
     });
 
-    // Contact form
-    function handleSubmit(e) {
+    // Contact form – Web3Forms
+    async function handleSubmit(e) {
         e.preventDefault();
-        const btn = document.getElementById('submitBtn');
+        const btn  = document.getElementById('submitBtn');
+        const form = e.target;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Se trimite...';
         btn.disabled  = true;
-
+        try {
+            const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+            const data = await res.json();
+            if (data.success) {
+                btn.innerHTML        = '<i class="fas fa-check"></i> Mesaj trimis cu succes!';
+                btn.style.background = '#27AE60';
+                form.reset();
+            } else {
+                throw new Error(data.message);
+            }
+        } catch (_) {
+            btn.innerHTML        = '<i class="fas fa-exclamation-triangle"></i> Eroare. Încercați din nou.';
+            btn.style.background = '#E74C3C';
+        }
         setTimeout(() => {
-            btn.innerHTML    = '<i class="fas fa-check"></i> Mesaj trimis cu succes!';
-            btn.style.background = '#27AE60';
-            e.target.reset();
-
-            setTimeout(() => {
-                btn.innerHTML        = '<i class="fas fa-paper-plane"></i> Trimite mesajul';
-                btn.style.background = '';
-                btn.disabled         = false;
-            }, 5000);
-        }, 1200);
+            btn.innerHTML        = '<i class="fas fa-paper-plane"></i> Trimite mesajul';
+            btn.style.background = '';
+            btn.disabled         = false;
+        }, 5000);
     }
 
-    // GDPR Banner
+    // GDPR
     const gdprBanner  = document.getElementById('gdprBanner');
     const gdprAccept  = document.getElementById('gdprAccept');
     const gdprDecline = document.getElementById('gdprDecline');
-
     if (!localStorage.getItem('gdpr_choice')) {
         setTimeout(() => gdprBanner.classList.add('visible'), 1500);
     }
-
     function dismissGdpr(choice) {
         localStorage.setItem('gdpr_choice', choice);
         gdprBanner.classList.remove('visible');
     }
-
     gdprAccept.addEventListener('click',  () => dismissGdpr('accepted'));
     gdprDecline.addEventListener('click', () => dismissGdpr('declined'));
+
+    // Service Modals
+    function openModal(id) {
+        const overlay = document.getElementById(id);
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+        const overlay = document.getElementById(id);
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    // Close on overlay click (outside modal box)
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeModal(overlay.id);
+        });
+    });
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal-overlay.open').forEach(o => closeModal(o.id));
+        }
+    });
 </script>
 </body>
 </html>
