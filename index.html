@@ -1347,16 +1347,9 @@
 
             <div class="contact__form fade-in">
                 <p class="contact__form-title">Trimiteți-ne un mesaj</p>
-                <!--
-                    WEB3FORMS: obțineți access key gratuit la https://web3forms.com/
-                    Introduceți adresa contabilitate.tf@gmail.com → primiți cheia pe email.
-                    Înlocuiți CHEIA_VOASTRA_AICI cu cheia primită.
-                -->
-                <form id="contactForm" onsubmit="handleSubmit(event)">
-                    <input type="hidden" name="access_key" value="108a2336-a658-47a9-a644-7d4251bec522">
-                    <input type="hidden" name="subject" value="Mesaj nou de pe site – Frigioi Tamara PFA">
-                    <input type="hidden" name="from_name" value="Site Frigioi Tamara PFA">
-                    <input type="hidden" name="redirect" value="false">
+                <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p hidden><input name="bot-field"></p>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Nume și prenume *</label>
@@ -1532,7 +1525,7 @@
         });
     });
 
-    // Contact form – Web3Forms
+    // Contact form – Netlify Forms
     async function handleSubmit(e) {
         e.preventDefault();
         const btn  = document.getElementById('submitBtn');
@@ -1540,19 +1533,17 @@
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Se trimite...';
         btn.disabled  = true;
         try {
-            const payload = JSON.stringify(Object.fromEntries(new FormData(form)));
-            const res  = await fetch('https://api.web3forms.com/submit', {
+            const res = await fetch('/', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: payload
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(form)).toString()
             });
-            const data = await res.json();
-            if (data.success) {
+            if (res.ok) {
                 btn.innerHTML        = '<i class="fas fa-check"></i> Mesaj trimis cu succes!';
                 btn.style.background = '#27AE60';
                 form.reset();
             } else {
-                throw new Error(data.message);
+                throw new Error('server error');
             }
         } catch (_) {
             btn.innerHTML        = '<i class="fas fa-exclamation-triangle"></i> Eroare. Încercați din nou.';
