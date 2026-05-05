@@ -1540,7 +1540,12 @@
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Se trimite...';
         btn.disabled  = true;
         try {
-            const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+            const payload = JSON.stringify(Object.fromEntries(new FormData(form)));
+            const res  = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: payload
+            });
             const data = await res.json();
             if (data.success) {
                 btn.innerHTML        = '<i class="fas fa-check"></i> Mesaj trimis cu succes!';
