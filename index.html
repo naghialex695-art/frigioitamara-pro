@@ -1523,7 +1523,7 @@
         });
     });
 
-    // Contact form – FormSubmit.co
+    // Contact form – Formspree
     async function handleSubmit(e) {
         e.preventDefault();
         const btn  = document.getElementById('submitBtn');
@@ -1532,9 +1532,6 @@
         btn.disabled  = true;
         const fd = new FormData(form);
         const payload = {
-            _subject: 'Mesaj nou de pe site – Frigioi Tamara PFA',
-            _captcha: 'false',
-            _template: 'table',
             name:    fd.get('name'),
             email:   fd.get('email'),
             telefon: fd.get('phone'),
@@ -1542,18 +1539,17 @@
             mesaj:   fd.get('message')
         };
         try {
-            const res  = await fetch('https://formsubmit.co/ajax/contact@contabilitatetf.ro', {
+            const res = await fetch('https://formspree.io/f/xqejzkdl', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify(payload)
             });
-            const data = await res.json();
-            if (data.success === 'true' || data.success === true) {
+            if (res.ok) {
                 btn.innerHTML        = '<i class="fas fa-check"></i> Mesaj trimis cu succes!';
                 btn.style.background = '#27AE60';
                 form.reset();
             } else {
-                throw new Error(data.message);
+                throw new Error('Eroare server');
             }
         } catch (_) {
             btn.innerHTML        = '<i class="fas fa-exclamation-triangle"></i> Eroare. Încercați din nou.';
